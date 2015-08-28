@@ -10,6 +10,5 @@ License: GPL-3
 LazyData: true
 Date: 2015
 Imports: Bessel, expm, MASS, Matrix, rootSolve
-Depends: MASS
 Suggests: tweedie, VGAM
 URL: https://github.com/dbgstat/ames
