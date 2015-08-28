@@ -1,0 +1,13 @@
+Package: ames
+Title: statistical solutions for Ames test data
+Version: 0.4-0
+Authors@R: c(
+		person("Davi", "Butturi-Gomes", email = "davi.butturi@gmail.com", role = c("aut", "cre")),
+		person("Silvio Sandoval", "Zocchi", email = "sszocchi@usp.br", role = "aut"))
+Description: A complete functional tool for Salmonella/microsome (Ames test) data analysis: model fitting and selection; residual and diagnostics analyses; plotting and envelope functions.
+Depends: R (>= 3.1.3)
+License: GPL-3
+LazyData: true
+Date: 2015
+Imports: Bessel, expm, MASS, Matrix, rootSolve
+Suggests: tweedie, VGAM
