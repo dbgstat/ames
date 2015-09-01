@@ -7,13 +7,17 @@
 mmd.fitames(..., model.names, akaike.weights = F, emql.all = F)
 }
 \arguments{
-\item{...}{One or more "fitames" class objects, usually fitted obtained by fitting models using fit.ames().}
+\item{...}{One or more objects of "fitames" class,
+usually fitted obtained by fitting models using \code{\link{fit.fitames}}.}
 
 \item{model.names}{Character (optional), specifying names for each model.}
 
-\item{akaike.weights}{Logical. If TRUE, internally calls aic.fitames(), recovering the Akaike weights and uses these values to compute the multimodel MMD. Defaults to FALSE.}
+\item{akaike.weights}{Logical. If TRUE, internally calls \code{\link{aic.fitames}},
+recovering the Akaike weights and uses these values to compute the multimodel MMD.
+Defaults to FALSE.}
 
-\item{emql.all}{Logical. Argument passed to aic.fitames(), if akaike.weights is TRUE, otherwise ignored. Defaults to FALSE.}
+\item{emql.all}{Logical. Argument passed to \code{\link{aic.fitames}},
+if akaike.weights is TRUE, otherwise ignored. Defaults to FALSE.}
 }
 \description{
 Computes the MMD values, given one or more previously fitted models
@@ -21,7 +25,15 @@ Computes the MMD values, given one or more previously fitted models
 \examples{
 mmd.fitames()
 }
-\keyword{ames,}
+\author{
+Davi Butturi-Gomes
+
+Silvio S. Zocchi
+}
+\seealso{
+\code{\link{aic.fitames}}, \code{\link{control.fitames}}, \code{\link{fit.ames}},
+}
+\keyword{ames}
 \keyword{mi}
-\keyword{mmd,}
+\keyword{mmd}
 

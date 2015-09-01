@@ -1,24 +1,40 @@
 #' Maximum Mutagenic Dose (MMD)
 #'
 #' Computes the MMD values, given one or more previously fitted models
-#' @param ... One or more "fitames" class objects, usually fitted obtained by fitting models using fit.ames().
+#'
+#' @param ... One or more objects of "fitames" class,
+#' usually fitted obtained by fitting models using \code{\link{fit.fitames}}.
 #' @param model.names Character (optional), specifying names for each model.
-#' @param akaike.weights Logical. If TRUE, internally calls aic.fitames(), recovering the Akaike weights and uses these values to compute the multimodel MMD. Defaults to FALSE.
-#' @param emql.all Logical. Argument passed to aic.fitames(), if akaike.weights is TRUE, otherwise ignored. Defaults to FALSE.
-#' @keywords mmd, ames, mi
-#' @export
+#' @param akaike.weights Logical. If TRUE, internally calls \code{\link{aic.fitames}},
+#' recovering the Akaike weights and uses these values to compute the multimodel MMD.
+#' Defaults to FALSE.
+#' @param emql.all Logical. Argument passed to \code{\link{aic.fitames}},
+#' if akaike.weights is TRUE, otherwise ignored. Defaults to FALSE.
+#'
+#' @keywords mmd ames mi
+#'
+#'
+#' @seealso \code{\link{aic.fitames}}, \code{\link{control.fitames}}, \code{\link{fit.ames}},
+#'
+#' @author Davi Butturi-Gomes
+#'
+#' Silvio S. Zocchi
+#'
 #' @examples
 #' mmd.fitames()
+#'
+#' @export
+
 
 mmd.fitames <- function(...,model.names,akaike.weights=F,emql.all=F){
   l.names   <- as.list(substitute(list(...)))[-1L]
   fits      <- list(...)
   nfit      <- length(fits)
-  
+
   preds    <- NULL
   mmds     <- NULL
   fit.name <- NULL
-  
+
   for(i in 1:nfit){
     if(class(fits[[i]])=="fitames"){
       preds    <- c(preds, as.character(fits[[i]]$model$Predictor) )
@@ -73,7 +89,7 @@ mmd.fitames <- function(...,model.names,akaike.weights=F,emql.all=F){
                xstar <- try(uniroot(stead.der, lower = xl[1], upper = xl[2], tol = .Machine$double.eps^0.25),silent=T)
                if(class(xstar)=="try-error"){
                  xstar <- max(uniroot.all(stead.der, lower = xl[1], upper = xl[2], tol = .Machine$double.eps^0.25))
-                 
+
                }else{
                  xstar <- xstar$root
                }
