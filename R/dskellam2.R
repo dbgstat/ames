@@ -54,4 +54,4 @@ dskellam2 <- function (x, mu1, mu2, log = FALSE)
   #ans[!ok2] <- NaN
   ans
 }
-environment(dskellam2) <- environment(dskellam)
+environment(dskellam2) <- environment(VGAM::dskellam)

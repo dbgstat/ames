@@ -147,4 +147,4 @@ skellam2 <- function (lmu1 = "loge", lmu2 = "loge", imu1 = NULL, imu2 = NULL,
                                 .nsimEIM = nsimEIM))))
 }
 
-environment(skellam2) <- environment(skellam)
+environment(skellam2) <- environment(VGAM::skellam)

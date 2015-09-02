@@ -64,4 +64,4 @@ besselIs2<-function (x, nu, nterm = 800, expon.scaled = FALSE, log = FALSE,
   }
   }
 }
-environment(besselIs2) <- environment(besselIs)
+environment(besselIs2) <- environment(Bessel::besselIs)

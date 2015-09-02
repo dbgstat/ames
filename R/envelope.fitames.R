@@ -111,8 +111,10 @@ envelope.fitames <- function(obj,nsim,ris.plot=F,rstar.plot=F,dis.plot=F,dstar.p
     env.rp <- t(apply(env.st[[3]],1,quantile,probs=probs))
     env.rs <- t(apply(env.st[[4]],1,quantile,probs=probs))
 
-    normq  <- qnorm(seq(probs[1],probs[2],length.out=length(obj$fitted.values)))
-
+    norm.ords <- 1:length(obj$fitted.values)
+    a.normq   <- ifelse(length(obj$fitted.values)<=10,3/8,1/2)
+    normq <- qnorm(  (norm.ords-a.normq)/(length(obj$fitted.values) + 1 -2*a.normq)   )
+    
     if(dis.plot){
       par(mar=c(4.5,4.5,1,1))
       plot(normq,sort(dis),ylim=ylimits,
@@ -262,8 +264,11 @@ envelope.fitames <- function(obj,nsim,ris.plot=F,rstar.plot=F,dis.plot=F,dstar.p
     }else zis.plot <- F
 
     probs   <- c(0.025,0.975)
-    normq  <- qnorm(seq(probs[1],probs[2],length.out=length(obj$fitted.values)))
-
+    
+    norm.ords <- 1:length(obj$fitted.values)
+    a.normq   <- ifelse(length(obj$fitted.values)<=10,3/8,1/2)
+    normq <- qnorm(  (norm.ords-a.normq)/(length(obj$fitted.values) + 1 -2*a.normq)   )
+    
     env.ri.eta1 <- t(apply(env.st[[1]],1,quantile,probs=probs))
     env.ri.eta2 <- t(apply(env.st[[2]],1,quantile,probs=probs))
     env.rs.eta1 <- t(apply(env.st[[3]],1,quantile,probs=probs))
