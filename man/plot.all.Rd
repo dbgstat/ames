@@ -4,7 +4,7 @@
 \alias{plot.all}
 \title{(internal)}
 \usage{
-plot.all(obj, nsim = 1000)
+\method{plot}{all}(obj, nsim = 1000)
 }
 \description{
 (internal)

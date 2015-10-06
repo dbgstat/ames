@@ -4,7 +4,7 @@
 \alias{logLik.fitames}
 \title{Log-likelihood on convergence of a fitames object}
 \usage{
-logLik.fitames(obj)
+\method{logLik}{fitames}(obj)
 }
 \arguments{
 \item{...}{}

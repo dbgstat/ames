@@ -9,7 +9,7 @@ skellam2(lmu1 = "loge", lmu2 = "loge", imu1 = NULL, imu2 = NULL,
 }
 \description{
 Estimates the two parameters of a Skellam distribution by maximum likelihood estimation.
-This is to be used along with \code{vglm} function, distributed by \{VGAM\} package.
+This is to be used along with \code{vglm} function, available within \{VGAM\} package.
 }
 \author{
 Davi Butturi-Gomes
@@ -17,6 +17,6 @@ Davi Butturi-Gomes
 Silvio S. Zocchi
 }
 \seealso{
-\code{\link[VGAM]{skellam}} \code{\link[VGAM]{vglm}}
+\code{\link[VGAM]{skellam}}, \code{\link[VGAM]{vglm}}
 }
 

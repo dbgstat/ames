@@ -1,6 +1,6 @@
 Package: ames
 Title: statistical solutions for Ames test data
-Version: 0.4-0
+Version: 0.4-1.5
 Authors@R: c(
 		person("Davi", "Butturi-Gomes", email = "davi.butturi@gmail.com", role = c("aut", "cre")),
 		person("Silvio Sandoval", "Zocchi", email = "sszocchi@usp.br", role = "aut"))
